@@ -1,4 +1,4 @@
-# Ranjan Monaco Editable Diff Editor (React + TypeScript)
+# Ranjan Monaco Editable Diff Code Editor (React + TypeScript)
 
 A production-ready **side-by-side diff editor** built using **Monaco Editor**, **React**, and **TypeScript**.  
 It supports **editing on both sides**, dynamic **language selection**, **theme switching**, and **file import/export**.

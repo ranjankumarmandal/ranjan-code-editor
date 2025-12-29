@@ -16,7 +16,7 @@ function hello() {
 function App() {
   return (
     <div style={{ padding: "16px" }}>
-      <h2>Monaco Diff Editor</h2>
+      <h2>Ranjan Code Diff Editor</h2>
 
       <CodeDiffEditor
         original={originalCode}
