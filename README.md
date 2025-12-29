@@ -50,3 +50,9 @@ npm install
 ```bash
 npm run dev
 ```
+
+## License
+This project is licensed under the MIT License.
+
+## You have some query?
+If you have some query, feel free to connect with me here -- [Ranjan Kumar Mandal](https://www.linkedin.com/in/ranjan-kumar-m-818367158/)
