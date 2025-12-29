@@ -1,36 +1,30 @@
-import { useEffect, useState } from "react";
-import ThemeToggle from "./components/ThemeToggle";
-import Toolbar from "./components/Toolbar";
-import JsonDiffView from "./components/JsonDiffView";
-import CodeFormatter from "./components/CodeFormatter";
-import { decodeShare } from "./utils/share";
+import React from "react";
+import CodeDiffEditor from "./components/DiffEditor";
 
-export default function App() {
-  const [left, setLeft] = useState("{}");
-  const [right, setRight] = useState("{}");
-  const [theme, setTheme] = useState<"light" | "dark">("light");
+const originalCode = `
+function hello() {
+  console.log("helo");
+}
+`;
 
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-  }, [theme]);
+const modifiedCode = `
+function hello() {
+  console.log("hello");
+}
+`;
 
-  useEffect(() => {
-    const hash = window.location.hash.slice(1);
-    if (hash) {
-      const data = decodeShare(hash);
-      if (data) {
-        setLeft(data.left);
-        setRight(data.right);
-      }
-    }
-  }, []);
-
+function App() {
   return (
-    <div style={{ padding: 16 }}>
-      <ThemeToggle theme={theme} setTheme={setTheme} />
-      <Toolbar left={left} right={right} />
-      <JsonDiffView left={left} right={right} theme={theme} />
-      <CodeFormatter theme={theme} />
+    <div style={{ padding: "16px" }}>
+      <h2>Monaco Diff Editor</h2>
+
+      <CodeDiffEditor
+        original={originalCode}
+        modified={modifiedCode}
+        language="javascript"
+      />
     </div>
   );
 }
+
+export default App;
